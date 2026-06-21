@@ -4,15 +4,43 @@ import { useRouter } from "next/navigation";
 export default function Hero() {
   const router = useRouter();
 
-  const handleAction = (target: string) => {
-    const user = localStorage.getItem("user");
-    // If no user found in memory, force them to Login
-    if (!user) {
-      router.push("/login");
-    } else {
-      router.push(target);
-    }
-  };
+ const handleAction=(target:string)=>{
+
+try{
+
+const user=
+
+JSON.parse(
+
+localStorage.getItem("user")
+
+||
+
+"{}"
+
+)
+
+if(!user.id){
+
+router.push("/login")
+
+return
+
+}
+
+router.push(target)
+
+}
+
+catch{
+
+localStorage.removeItem("user")
+
+router.push("/login")
+
+}
+
+}
 
   return (
     <section className="w-full pt-24 pb-10 bg-white flex flex-col items-center">

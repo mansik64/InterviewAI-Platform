@@ -116,21 +116,7 @@ return
 
 
 
-const savedUser = {
 
- ...data.user,
-
- isLoggedIn: true,
-
- techScore: 0,
-
- commScore: 0,
-
- confScore: 0,
-
- fluencyScore: 0
-
-}
 
 const loggedUser={
 

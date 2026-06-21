@@ -9,7 +9,7 @@ export default function ResumeAnalysisPage() {
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "uploading" | "analyzing" | "done">("idle");
   const [analysis,setAnalysis]=useState<any>(null)
-  const [pdfUrl,setPdfUrl]=useState("")
+  
   const startAnalysis = async () => {
 
 if(!file){
@@ -34,6 +34,31 @@ localStorage.getItem(
 
 )
 
+if(!user.id){
+
+alert(
+
+"Please login again"
+
+)
+
+router.push(
+
+"/login"
+
+)
+
+return
+
+}
+
+if(!user.id){
+
+router.push("/login")
+
+return
+
+}
 
 
 try{
@@ -64,6 +89,11 @@ user.id
 
 setStatus("analyzing")
 
+console.log(
+"API URL :",
+process.env.NEXT_PUBLIC_API_URL
+)
+
 const response = await fetch(
 
 `${process.env.NEXT_PUBLIC_API_URL}/api/resume/upload`,
@@ -78,44 +108,88 @@ body:formData
 
 )
 
-const data = await response.json()
+console.log(
 
+"STATUS :",
 
-console.log(data)
-
-localStorage.setItem(
-
-"latestResume",
-
-JSON.stringify(data)
+response.status
 
 )
 
+const data = await response.json()
+
+console.log(
+
+"RESPONSE :",
+
+data
+
+)
+
+if(!response.ok){
+
+throw new Error(
+
+data.error ||
+
+data.message ||
+
+"Upload failed"
+
+)
+
+}
+
+console.log("RESPONSE :",data)
+
+if(!response.ok){
+
+throw new Error(
+data.error ||
+data.message ||
+"Upload failed"
+)
+
+}
+
+localStorage.setItem(
+"latestResume",
+JSON.stringify(data)
+)
+
 setAnalysis({
-
 ...data.analysis,
-
 pdfUrl:data.pdfUrl
-
 })
-
 
 setStatus("done")
 
 
 }
 
-catch(err){
+catch(err:any){
 
-console.log(err)
+console.log(
+
+"ERROR :",
+
+err
+
+)
 
 alert(
+
+err.message ||
 
 "Resume upload failed"
 
 )
 
-setStatus("idle")
+setStatus(
+
+"idle"
+
+)
 
 }
 
