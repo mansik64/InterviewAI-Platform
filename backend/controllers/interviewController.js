@@ -546,7 +546,7 @@ feedback
 
 const pdfUrl=
 
-`${process.env.BACKEND_URL}/reports/${pdf}`
+`${process.env.BACKEND_URL}/api/reports/${pdf}`
 
 
 
