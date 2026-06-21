@@ -76,14 +76,6 @@ text
 )
 
 
-const pdf=
-
-await generateResumeReport(
-
-result.analysis
-
-)
-
 const pdfUrl=
 
 await generateResumeReport(

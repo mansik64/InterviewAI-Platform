@@ -481,35 +481,28 @@ filePath
 
 )
 
-const {
+console.log("Uploading report to Supabase...")
 
-error
-
-}=await supabase
-
+const { data, error } = await supabase
 .storage
-
-.from(
-
-"report-files"
-
+.from("report-files")
+.upload(
+fileName,
+pdfBuffer,
+{
+contentType:"application/pdf"
+}
 )
 
-.upload(
+console.log("UPLOAD DATA:",data)
 
-fileName,
+console.log("UPLOAD ERROR:",error)
 
-pdfBuffer,
+if(error){
 
-{
-
-contentType:
-
-"application/pdf"
+throw error
 
 }
-
-)
 
 if(error){
 

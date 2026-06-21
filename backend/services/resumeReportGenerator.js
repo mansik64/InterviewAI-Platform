@@ -504,35 +504,22 @@ const pdfBuffer=
 
 fs.readFileSync(filePath)
 
-const {
+console.log("Uploading resume report to Supabase...")
 
-error
-
-}=await supabase
-
+const { data, error } = await supabase
 .storage
-
-.from(
-
-"report-files"
-
-)
-
+.from("resume-files")
 .upload(
-
 fileName,
-
 pdfBuffer,
-
 {
-
-contentType:
-
-"application/pdf"
-
+contentType:"application/pdf"
 }
-
 )
+
+console.log("UPLOAD DATA:",data)
+
+console.log("UPLOAD ERROR:",error)
 
 if(error){
 
@@ -550,7 +537,7 @@ data
 
 .from(
 
-"report-files"
+"resume-files"
 
 )
 
