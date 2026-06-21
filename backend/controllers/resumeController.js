@@ -86,7 +86,7 @@ result.analysis
 
 const pdfUrl=
 
-`http://localhost:5000/reports/${pdf}`
+`${process.env.BACKEND_URL}/reports/${pdf}`
 
 
 

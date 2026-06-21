@@ -29,7 +29,7 @@ try{
 
 const res=await fetch(
 
-`http://localhost:5000/api/interview/history?userId=${userId}`
+`${process.env.NEXT_PUBLIC_API_URL}/api/interview/history?userId=${userId}`
 
 )
 
@@ -55,7 +55,7 @@ try{
 
 const res=await fetch(
 
-`http://localhost:5000/api/resume/history?userId=${userId}`
+`${process.env.NEXT_PUBLIC_API_URL}/api/resume/history?userId=${userId}`
 
 )
 
@@ -81,7 +81,7 @@ try{
 
 await fetch(
 
-`http://localhost:5000/api/resume/${id}`,
+`${process.env.NEXT_PUBLIC_API_URL}/api/resume/${id}`,
 
 {
 
@@ -119,7 +119,7 @@ try{
 
 await fetch(
 
-`http://localhost:5000/api/interview/${id}`,
+`${process.env.NEXT_PUBLIC_API_URL}/api/interview/${id}`,
 
 {
 
