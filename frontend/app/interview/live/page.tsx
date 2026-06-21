@@ -238,7 +238,7 @@ const response=
 
 await fetch(
 
-"${process.env.NEXT_PUBLIC_API_URL}/api/interview/submit",
+'${process.env.NEXT_PUBLIC_API_URL}/api/interview/submit',
 
 {
 
@@ -447,7 +447,7 @@ interviewStartRef.current
 
 await fetch(
 
-"${process.env.NEXT_PUBLIC_API_URL}/api/interview/save",
+'${process.env.NEXT_PUBLIC_API_URL}/api/interview/save',
 
 {
 

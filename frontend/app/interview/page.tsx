@@ -184,7 +184,7 @@ setShowCalendar(false)
 
     try {
       const response = await fetch(
-        "${process.env.NEXT_PUBLIC_API_URL}/api/interview/generate",
+        '${process.env.NEXT_PUBLIC_API_URL}/api/interview/generate',
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
