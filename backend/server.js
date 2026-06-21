@@ -6,7 +6,19 @@ const cors=require("cors")
 
 const path=require("path")
 
+const fs=require("fs")
+
 const app=express()
+
+
+
+if(!fs.existsSync("uploads")){
+ fs.mkdirSync("uploads",{recursive:true})
+}
+
+if(!fs.existsSync("reports")){
+ fs.mkdirSync("reports",{recursive:true})
+}
 
 app.use(cors())
 

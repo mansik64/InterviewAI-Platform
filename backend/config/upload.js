@@ -1,37 +1,57 @@
-const multer=require("multer")
+const multer = require("multer")
 
-const storage=
+const fs = require("fs")
 
-multer.diskStorage({
+const path = require("path")
 
-destination:(req,file,cb)=>{
-
-cb(
-null,
-"uploads/"
+// Absolute path to uploads folder
+const uploadPath = path.join(
+  __dirname,
+  "..",
+  "uploads"
 )
 
-},
+// Create uploads folder if it doesn't exist
+if (!fs.existsSync(uploadPath)) {
 
-filename:(req,file,cb)=>{
-
-cb(
-null,
-Date.now()
-+
-"-"
-+
-file.originalname
-)
+  fs.mkdirSync(
+    uploadPath,
+    { recursive: true }
+  )
 
 }
 
+const storage = multer.diskStorage({
+
+  destination: (req, file, cb) => {
+
+    cb(
+      null,
+      uploadPath
+    )
+
+  },
+
+  filename: (req, file, cb) => {
+
+    cb(
+
+      null,
+
+      Date.now() +
+
+      "-" +
+
+      file.originalname
+
+    )
+
+  }
+
 })
 
-module.exports=
+module.exports = multer({
 
-multer({
-
-storage
+  storage
 
 })

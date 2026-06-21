@@ -86,7 +86,7 @@ result.analysis
 
 const pdfUrl=
 
-`${process.env.BACKEND_URL}/api/reports/${pdf}`
+`${process.env.BACKEND_URL}/reports/${pdf}`
 
 
 
