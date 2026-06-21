@@ -20,7 +20,14 @@ if(!fs.existsSync("reports")){
  fs.mkdirSync("reports",{recursive:true})
 }
 
-app.use(cors())
+app.use(
+  cors({
+    origin: [
+      "https://interview-ai-platform-ten.vercel.app"
+    ],
+    credentials: true
+  })
+)
 
 app.use(express.json())
 

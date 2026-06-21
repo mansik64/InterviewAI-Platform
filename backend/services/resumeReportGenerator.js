@@ -4,6 +4,8 @@ const fs=require("fs")
 
 const path=require("path")
 
+const supabase=require("../config/supabase")
+
 exports.generateResumeReport=async(data)=>{
 
 const reportsDir=path.join(__dirname,"../reports")
@@ -494,7 +496,91 @@ stream.on(
 
 "finish",
 
-()=>resolve(fileName)
+async()=>{
+
+try{
+
+const pdfBuffer=
+
+fs.readFileSync(filePath)
+
+const {
+
+error
+
+}=await supabase
+
+.storage
+
+.from(
+
+"report-files"
+
+)
+
+.upload(
+
+fileName,
+
+pdfBuffer,
+
+{
+
+contentType:
+
+"application/pdf"
+
+}
+
+)
+
+if(error){
+
+throw error
+
+}
+
+const {
+
+data
+
+}=supabase
+
+.storage
+
+.from(
+
+"report-files"
+
+)
+
+.getPublicUrl(
+
+fileName
+
+)
+
+fs.unlinkSync(
+
+filePath
+
+)
+
+resolve(
+
+data.publicUrl
+
+)
+
+}
+
+catch(err){
+
+reject(err)
+
+}
+
+}
 
 )
 

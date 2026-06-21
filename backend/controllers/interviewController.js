@@ -517,8 +517,7 @@ round.feedback.feedback
 }
 
 
-
-const pdf=
+const pdfUrl=
 
 await generateReport({
 
@@ -541,12 +540,6 @@ practiceMinutes,
 feedback
 
 })
-
-
-
-const pdfUrl=
-
-`${process.env.BACKEND_URL}/reports/${pdf}`
 
 
 

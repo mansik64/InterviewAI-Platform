@@ -86,7 +86,11 @@ result.analysis
 
 const pdfUrl=
 
-`${process.env.BACKEND_URL}/reports/${pdf}`
+await generateResumeReport(
+
+result.analysis
+
+)
 
 
 
