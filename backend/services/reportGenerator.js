@@ -483,36 +483,61 @@ filePath
 
 console.log("Uploading report to Supabase...")
 
-const { data, error } = await supabase
+const {
+
+data:uploadData,
+
+error:uploadError
+
+}=await supabase
+
 .storage
-.from("report-files")
-.upload(
-fileName,
-pdfBuffer,
-{
-contentType:"application/pdf"
-}
+
+.from(
+
+"report-files"
+
 )
 
-console.log("UPLOAD DATA:",data)
+.upload(
 
-console.log("UPLOAD ERROR:",error)
+fileName,
 
-if(error){
+pdfBuffer,
 
-throw error
+{
+
+contentType:"application/pdf"
 
 }
 
-if(error){
+)
 
-throw error
+console.log(
+
+"UPLOAD DATA:",
+
+uploadData
+
+)
+
+console.log(
+
+"UPLOAD ERROR:",
+
+uploadError
+
+)
+
+if(uploadError){
+
+throw uploadError
 
 }
 
 const {
 
-data
+data:publicUrlData
 
 }=supabase
 
@@ -538,7 +563,7 @@ filePath
 
 resolve(
 
-data.publicUrl
+publicUrlData.publicUrl
 
 )
 
