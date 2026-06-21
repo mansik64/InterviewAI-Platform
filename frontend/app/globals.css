@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+html {
+  scroll-padding-top: 5rem; /* Matches navbar height (20) */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
