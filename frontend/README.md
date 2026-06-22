@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 InterviewAI Frontend
 
-## Getting Started
+Frontend application for **InterviewAI – AI Powered Interview Preparation Platform**.
 
-First, run the development server:
+This application provides an interactive user interface that enables users to prepare for interviews using AI-powered resume analysis, mock interviews, personalized feedback, and performance tracking.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+* 🔐 User Authentication
+* 🏠 Modern Landing Page
+* 🎯 AI Mock Interview Dashboard
+* 📄 Resume Analysis Interface
+* 👤 Candidate Profile Management
+* 📊 Performance Tracking Dashboard
+* 📱 Responsive Design
+* 🌙 Dark Mode Support
+
+---
+
+## 🛠️ Tech Stack
+
+* Next.js
+* React.js
+* TypeScript
+* Tailwind CSS
+
+---
+
+## 📁 Frontend Structure
+
+```text id="wnr0xk"
+frontend/
+
+├── app/
+├── components/
+├── hooks/
+├── lib/
+├── public/
+├── styles/
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Clone the repository.
 
-## Learn More
+```bash id="5w6hmw"
+git clone https://github.com/YOUR_USERNAME/InterviewAI-Platform.git
 
-To learn more about Next.js, take a look at the following resources:
+cd InterviewAI-Platform/frontend
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install dependencies.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash id="h6t28j"
+npm install
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔑 Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create a `.env.local` file.
+
+```env id="l72w9n"
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+---
+
+## ▶️ Run Development Server
+
+```bash id="5v7jlwm"
+npm run dev
+```
+
+The application will run on:
+
+```text id="wjlwm0"
+http://localhost:3000
+```
+
+---
+
+## 📸 Application Screenshots
+
+### 🏠 Home Page
+
+![Home Page](../screenshots/home-page.png)
+
+### 🎯 Interview Dashboard
+
+![Interview Dashboard](../screenshots/interview-dashboard.png)
+
+### 👤 Candidate Profile
+
+![Candidate Profile](../screenshots/candidate-profile.png)
+
+---
+
+## 🌐 Backend Integration
+
+The frontend communicates with:
+
+* Express.js Backend API
+* Google Gemini API
+* Groq API
+* Supabase PostgreSQL Database
+
+---
+
+## ☁️ Deployment
+
+Frontend is deployed using **Vercel**.
+
+Live Demo:
+
+https://interview-ai-platform-ten.vercel.app/
+
+---
+
+## 👩‍💻 Author
+
+**Mansi Shukla**
+
+Aspiring Software Developer
+
+📧 [24mansishukla614@gmail.com](mailto:24mansishukla614@gmail.com)
