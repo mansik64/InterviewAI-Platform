@@ -1,206 +1,188 @@
-# InterviewAI - AI Powered Interview Preparation Platform
+# InterviewAI – AI Powered Interview Preparation Platform
 
-> An end-to-end AI-powered interview preparation platform that helps users analyze resumes, generate role-based mock interviews, receive AI-driven feedback, and download professional PDF reports.
+> An AI-powered full-stack interview preparation platform that helps students and job seekers improve their interview performance through resume analysis, role-based mock interviews, AI evaluation, personalized feedback, and professional reports.
 
-🌐 Live Demo: https://interview-ai-platform-ten.vercel.app/
-
----
-
-## Overview
-
-InterviewAI is a full-stack web application built to streamline interview preparation using Artificial Intelligence.
-
-The platform allows users to:
-
-- Upload resumes for AI analysis
-- Get ATS scoring and improvement suggestions
-- Generate role-based mock interviews
-- Receive personalized AI feedback
-- Download professional PDF reports
-- Track previous interview and resume history
-
-This project combines AI, cloud deployment, and modern web technologies to simulate a real-world interview preparation ecosystem.
+🌐 **Live Demo:** https://interview-ai-platform-ten.vercel.app/
 
 ---
 
-## Key Features
+# Overview
 
-### Authentication System
+InterviewAI is a modern web application designed to simulate real interview experiences and provide intelligent feedback using Artificial Intelligence.
 
-- User Registration
-- User Login
-- JWT Authentication
-- Protected Routes
+The platform enables users to upload resumes, receive ATS-based resume analysis, generate role-specific interview questions, submit answers via text or voice, receive AI-powered evaluations, and track their improvement through interactive dashboards.
 
-### AI Resume Analysis
-
-- PDF Resume Upload
-- Resume Text Extraction
-- ATS Score Generation
-- Skill Identification
-- AI Improvement Suggestions
-- Professional PDF Report Generation
-
-### AI Mock Interview Generator
-
-- Role-Based Interview Generation
-- AI Evaluation of Answers
-- Performance Analysis
-- Personalized Feedback
-- Confidence Improvement Suggestions
-- Professional Interview Report Generation
-
-### Dashboard & History
-
-- Resume History
-- Interview History
-- Download Previous Reports
+The project demonstrates full-stack development, AI integration, cloud deployment, authentication, file processing, and scalable architecture.
 
 ---
 
-## Live Application
+# Problem Statement
 
-### Frontend (Vercel)
+Many students and job seekers struggle with:
 
-https://interview-ai-platform-ten.vercel.app/
+* Lack of real interview experience
+* Difficulty identifying resume weaknesses
+* Limited personalized feedback
+* Inability to track interview performance over time
+* Insufficient preparation for technical and HR interviews
 
-### Backend (Render)
-
-Deployed on Render Cloud Platform
-
-### Database
-
-Supabase PostgreSQL
+InterviewAI addresses these challenges by providing AI-driven resume analysis, mock interviews, performance evaluation, and actionable improvement recommendations.
 
 ---
 
-## Project Architecture
+# Key Features
 
-```
-                    User
+## Authentication System
 
-                      |
-
-               Next.js Frontend
-
-                    (Vercel)
-
-                      |
-
-                      |
-
-               Express.js Backend
-
-                    (Render)
-
-         --------------------------------
-
-         |              |               |
-
-      Gemini AI       Groq AI       Supabase
-
-         |                              |
-
-         |                              |
-
-  AI Processing                 PostgreSQL DB
-
-```
+* User Registration
+* Secure User Login
+* JWT Authentication
+* Protected Routes
+* Password Hashing using bcryptjs
+* Session Management
 
 ---
 
-## Tech Stack
+## AI Resume Analysis
 
-### Frontend
+Users can upload resumes in PDF format and receive detailed AI-generated insights.
 
-- Next.js 15
-- React.js
-- TypeScript
-- Tailwind CSS
-- Zustand
+### Features
 
-### Backend
-
-- Node.js
-- Express.js
-
-### Database
-
-- Supabase
-
-### Artificial Intelligence
-
-- Google Gemini API
-- Groq API
-
-### File Processing
-
-- Multer
-- PDF Parse
-- PDFKit
-
-### Authentication
-
-- JWT (JSON Web Tokens)
-- bcryptjs
-
-### Deployment
-
-- Frontend → Vercel
-- Backend → Render
-- Database → Supabase
+* PDF Resume Upload
+* Resume Text Extraction
+* ATS Compatibility Score
+* Skill Identification
+* Missing Keyword Detection
+* Experience Analysis
+* Resume Strength Assessment
+* AI Improvement Suggestions
+* Professional PDF Report Generation
 
 ---
 
-## Folder Structure
+## AI Mock Interview Generator
 
-```
-InterviewAI-Platform/
+Generate customized interview sessions based on selected job roles.
 
-├── frontend/
+### Features
 
-│   ├── app/
-
-│   ├── components/
-
-│   ├── store/
-
-│   └── public/
-
-│
-
-├── backend/
-
-│   ├── config/
-
-│   ├── controllers/
-
-│   ├── routes/
-
-│   ├── services/
-
-│   ├── uploads/
-
-│   └── reports/
-
-│
-
-└── README.md
-
-```
+* Technical Interview Questions
+* HR Interview Questions
+* Role-Based Question Generation
+* Dynamic AI Questioning
+* Multiple Interview Categories
+* Realistic Interview Simulation
 
 ---
 
-## Application Workflow
+## Speech-to-Text Interview Support
 
-### Resume Analysis Flow
+Users can answer interview questions using voice.
 
-```
+### Features
+
+* Voice Recording
+* Speech-to-Text Conversion
+* Real-Time Transcription
+* Hands-Free Interview Experience
+* Improved Accessibility
+
+---
+
+## AI Evaluation System
+
+AI analyzes submitted answers and generates detailed feedback.
+
+### Evaluation Metrics
+
+* Relevance
+* Technical Accuracy
+* Completeness
+* Communication Skills
+* Confidence Level
+* Problem-Solving Approach
+* Clarity of Response
+
+### Feedback Includes
+
+* Strengths
+* Weak Areas
+* Suggested Improvements
+* Performance Score
+* Personalized Recommendations
+
+---
+
+## Personalized Learning Recommendations
+
+Based on interview performance, the platform recommends improvement areas.
+
+### Features
+
+* Skill Gap Analysis
+* Recommended Topics
+* Learning Roadmap
+* Improvement Suggestions
+* Interview Preparation Guidance
+
+---
+
+## Dashboard & Analytics
+
+Track interview and resume performance through an interactive dashboard.
+
+### Dashboard Features
+
+* ATS Score Tracking
+* Interview Score Tracking
+* Resume History
+* Interview History
+* Performance Trends
+* Improvement Analytics
+* Download Previous Reports
+
+---
+
+## Professional PDF Reports
+
+Generate downloadable reports for both resumes and interviews.
+
+### Report Contents
+
+* ATS Analysis
+* Interview Scores
+* AI Feedback
+* Strengths & Weaknesses
+* Learning Recommendations
+* Improvement Plan
+
+---
+
+## Admin Dashboard
+
+Administrative features for managing platform activity.
+
+### Features
+
+* User Management
+* Interview Statistics
+* Resume Analytics
+* System Monitoring
+* Platform Usage Reports
+
+---
+
+# Project Workflow
+
+## Resume Analysis Flow
+
+```text
 Upload Resume
 
 ↓
 
-Extract PDF Text
+Extract Resume Content
 
 ↓
 
@@ -212,7 +194,7 @@ ATS Score Generation
 
 ↓
 
-Suggestions Generation
+Improvement Suggestions
 
 ↓
 
@@ -220,13 +202,12 @@ Generate PDF Report
 
 ↓
 
-Store Data in Supabase
-
+Store Data in Database
 ```
 
-### Interview Flow
+## Interview Flow
 
-```
+```text
 Select Job Role
 
 ↓
@@ -235,7 +216,11 @@ Generate AI Questions
 
 ↓
 
-Submit Answers
+Start Interview
+
+↓
+
+Submit Answers (Text/Voice)
 
 ↓
 
@@ -243,7 +228,15 @@ AI Evaluation
 
 ↓
 
-Generate Feedback
+Performance Analysis
+
+↓
+
+Personalized Feedback
+
+↓
+
+Learning Recommendations
 
 ↓
 
@@ -251,15 +244,263 @@ Generate PDF Report
 
 ↓
 
-Store History
-
+Store Interview History
 ```
 
 ---
 
-## Installation Guide
+# Project Architecture
 
-### Clone Repository
+```text
+                    User
+
+                      │
+
+               Next.js Frontend
+
+                      │
+
+       ┌──────────────┼──────────────┐
+       │              │              │
+
+ Authentication   Resume AI    Interview AI
+
+       │              │              │
+
+   Supabase       Gemini AI     Groq/Gemini
+
+       │              │              │
+
+              Express.js Backend
+
+                      │
+
+               PostgreSQL Database
+```
+
+---
+
+# Technology Stack
+
+## Frontend
+
+* Next.js 15
+* React.js
+* TypeScript
+* Tailwind CSS
+* Zustand
+
+## Backend
+
+* Node.js
+* Express.js
+
+## AI Services
+
+* Google Gemini API
+* Groq API
+
+## Database
+
+* PostgreSQL
+* Supabase
+
+## Authentication
+
+* JWT Authentication
+* bcryptjs
+
+## File Processing
+
+* Multer
+* PDF Parse
+* PDFKit
+
+## Real-Time Communication
+
+* WebSockets
+* Socket.io
+
+## Speech Processing
+
+* Web Speech API
+* Speech-to-Text Integration
+
+## Deployment
+
+* Frontend → Vercel
+* Backend → Render
+* Database → Supabase
+
+---
+
+# Folder Structure
+
+```text
+InterviewAI-Platform/
+
+├── frontend/
+│
+├── app/
+├── components/
+├── store/
+├── public/
+│
+├── backend/
+│
+├── config/
+├── controllers/
+├── middleware/
+├── routes/
+├── services/
+├── uploads/
+├── reports/
+│
+└── README.md
+```
+
+---
+
+# API Endpoints
+
+## Authentication
+
+```http
+POST /api/auth/register
+POST /api/auth/login
+GET  /api/auth/profile
+```
+
+## Resume
+
+```http
+POST /api/resume/upload
+GET  /api/resume/history
+GET  /api/resume/report/:id
+```
+
+## Interview
+
+```http
+POST /api/interview/generate
+POST /api/interview/evaluate
+GET  /api/interview/history
+GET  /api/interview/report/:id
+```
+
+---
+
+# Environment Variables
+
+## Backend
+
+```env
+PORT=
+JWT_SECRET=
+
+GEMINI_API_KEY=
+GROQ_API_KEY=
+
+SUPABASE_URL=
+SUPABASE_KEY=
+
+DATABASE_URL=
+```
+
+## Frontend
+
+```env
+NEXT_PUBLIC_API_URL=
+```
+
+---
+
+# Security Features
+
+* JWT Authentication
+* Password Hashing
+* Protected API Routes
+* Secure Environment Variables
+* Input Validation
+* File Upload Validation
+* Secure Database Connections
+* Authentication Middleware
+
+---
+
+# Performance Optimizations
+
+* Modular Architecture
+* Reusable Components
+* Efficient Database Queries
+* State Management with Zustand
+* Optimized API Calls
+* Cloud Deployment
+* Scalable Backend Design
+
+---
+
+# Challenges Solved During Development
+
+* Replaced hardcoded localhost URLs
+* Configured production environment variables
+* Fixed Vercel deployment issues
+* Resolved Render file path problems
+* Optimized PDF generation
+* Implemented secure authentication
+* Managed cloud-based file handling
+* Improved database performance
+
+---
+
+# Future Enhancements
+
+* AI Voice Interviews
+* Real-Time Video Interviews
+* Camera-Based Interview Monitoring
+* Advanced Speech Analysis
+* Interview Difficulty Levels
+* Multi-Language Support
+* Email Report Delivery
+* AI Career Guidance
+* Company-Specific Interview Preparation
+* Advanced Analytics Dashboard
+
+---
+
+# Expected Outcomes
+
+The platform provides:
+
+1. Secure user authentication.
+2. AI-powered mock interviews.
+3. Resume analysis and ATS scoring.
+4. Speech-to-text interview support.
+5. AI-generated feedback reports.
+6. Personalized learning recommendations.
+7. Performance tracking dashboards.
+8. Downloadable PDF reports.
+9. Admin management capabilities.
+10. Responsive web experience across devices.
+
+---
+
+# Screenshots
+
+Add screenshots of:
+
+* Login Page
+* Dashboard
+* Resume Analyzer
+* Mock Interview Screen
+* AI Feedback Page
+* PDF Report Preview
+
+---
+
+# Installation Guide
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/InterviewAI-Platform.git
@@ -267,7 +508,7 @@ git clone https://github.com/YOUR_USERNAME/InterviewAI-Platform.git
 cd InterviewAI-Platform
 ```
 
-### Backend Setup
+## Backend Setup
 
 ```bash
 cd backend
@@ -277,7 +518,7 @@ npm install
 npm run dev
 ```
 
-### Frontend Setup
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -289,77 +530,47 @@ npm run dev
 
 ---
 
-## Deployment
+# Deployment
 
-### Frontend
+## Frontend
 
 Platform: Vercel
 
-### Backend
+## Backend
 
 Platform: Render
 
-### Database
+## Database
 
-Platform: Supabase
-
----
-
-## Challenges Solved During Deployment
-
-- Replaced hardcoded localhost URLs
-- Configured environment variables
-- Fixed Vercel production builds
-- Resolved Render file path issues
-- Configured PDF generation routes
-- Implemented cloud-compatible file handling
+Platform: Supabase PostgreSQL
 
 ---
 
-## Security Features
+# Project Highlights
 
-- JWT Authentication
-- Password Hashing
-- Protected API Routes
-- Environment Variable Management
-- Secure Database Connections
-
----
-
-## Future Enhancements
-
-- AI Voice Interview
-- Speech Analysis
-- Real-time Camera Monitoring
-- Interview Difficulty Levels
-- Admin Dashboard
-- Multi-language Support
-- Analytics Dashboard
-- Email Report Delivery
+* AI-Powered Interview Preparation Platform
+* ATS Resume Analysis Engine
+* Role-Based Mock Interview Generator
+* Speech-to-Text Support
+* AI Evaluation & Feedback System
+* Personalized Learning Recommendations
+* Professional PDF Reports
+* Interactive Performance Dashboard
+* Secure Authentication
+* Cloud-Native Deployment
 
 ---
 
-## Performance Optimizations
+# Author
 
-- Modular Architecture
-- Reusable Components
-- Cloud Deployment
-- Scalable Backend Structure
-- Efficient Database Queries
-
----
-
-## Author
-
-### Mansi Shukla
+**Mansi Shukla**
 
 Aspiring Software Developer
-
-GitHub: https://github.com/mansik64
+Email - 24mansishukla614@gmail.com
 
 ---
 
-## License
+# License
 
 This project is developed for educational, portfolio, and interview demonstration purposes.
 
