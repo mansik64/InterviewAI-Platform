@@ -52,13 +52,7 @@ return
 
 }
 
-if(!user.id){
 
-router.push("/login")
-
-return
-
-}
 
 
 try{
@@ -140,17 +134,7 @@ data.message ||
 
 }
 
-console.log("RESPONSE :",data)
 
-if(!response.ok){
-
-throw new Error(
-data.error ||
-data.message ||
-"Upload failed"
-)
-
-}
 
 localStorage.setItem(
 "latestResume",
@@ -198,21 +182,21 @@ setStatus(
   
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors duration-300">
       <Navbar />
       <main className="flex-grow pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
           
-          <button onClick={() => router.back()} className="flex items-center gap-2 text-slate-400 font-bold mb-8 hover:text-slate-900 transition-colors">
+          <button onClick={() => router.back()} className="flex items-center gap-2 text-slate-400 dark:text-slate-300 font-bold mb-8 hover:text-slate-900 dark:hover:text-white transition-colors">
             <ArrowLeft size={18}/> Back to Dashboard
           </button>
 
-          <div className="bg-white rounded-[3rem] p-12 shadow-sm border border-slate-100">
-            <h1 className="text-4xl font-black text-slate-900 mb-2">AI Resume Analysis</h1>
-            <p className="text-slate-500 font-medium mb-12">Upload your PDF resume to receive instant AI scoring and content improvement suggestions.</p>
+          <div className="bg-white dark:bg-slate-900 rounded-[3rem] p-12 shadow-sm border border-slate-100 dark:border-slate-700">
+            <h1 className="text-4xl font-black text-slate-900 dark:text-white mb-2">AI Resume Analysis</h1>
+            <p className="text-slate-500 dark:text-slate-300 font-medium mb-12">Upload your PDF resume to receive instant AI scoring and content improvement suggestions.</p>
 
             {status === "idle" && (
-              <div className="border-4 border-dashed border-slate-100 rounded-[2.5rem] p-20 text-center flex flex-col items-center group hover:border-blue-200 transition-colors">
+              <div className="border-4 border-dashed border-slate-100 dark:border-slate-700 rounded-[2.5rem] p-20 text-center flex flex-col items-center group hover:border-blue-200 transition-colors">
                 <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Upload size={32} strokeWidth={3} />
                 </div>
@@ -223,7 +207,7 @@ setStatus(
                   onChange={(e) => setFile(e.target.files?.[0] || null)}
                 />
                 <label htmlFor="resume-upload" className="cursor-pointer">
-                  <p className="text-xl font-black text-slate-900">{file ? file.name : "Click to select resume"}</p>
+                  <p className="text-xl font-black text-slate-900 dark:text-white">{file ? file.name : "Click to select resume"}</p>
                   <p className="text-slate-400 font-bold mt-2">Only PDF files are supported</p>
                 </label>
                 {file && (
@@ -245,7 +229,7 @@ setStatus(
                     {status === "uploading" ? <Upload size={32} className="text-blue-200"/> : <Search size={32} className="text-blue-200"/>}
                   </div>
                 </div>
-                <h3 className="text-2xl font-black text-slate-900">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white">
                   {status === "uploading" ? "Uploading to Secure Vault..." : "AI is Analyzing your Content..."}
                 </h3>
                 <p className="text-slate-400 font-bold mt-2">This usually takes a few seconds.</p>
@@ -270,7 +254,7 @@ strokeWidth={3}
 
 <h3
 
-className="text-3xl font-black text-slate-900"
+className="text-3xl font-black text-slate-900 dark:text-white"
 
 >
 
@@ -280,7 +264,7 @@ Analysis Complete
 
 <p
 
-className="text-slate-500 mt-4"
+className="text-slate-500 dark:text-slate-300 mt-4"
 
 >
 

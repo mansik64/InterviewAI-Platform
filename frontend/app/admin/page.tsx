@@ -223,7 +223,7 @@ if(!user){
 
 return(
 
-<div className="min-h-screen bg-white flex flex-col">
+<div className="min-h-screen bg-white dark:bg-slate-950 flex flex-col transition-colors duration-300">
 
 <Navbar/>
 
@@ -231,13 +231,13 @@ return(
 
 <div>
 
-<h2 className="text-3xl font-black mb-4">
+<h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4">
 
 Profile Locked
 
 </h2>
 
-<p className="text-slate-500 mb-6">
+<p className="text-slate-500 dark:text-slate-300 mb-6">
 
 Please login first
 
@@ -269,7 +269,7 @@ Go To Login
 
 return(
 
-<div className="min-h-screen bg-slate-50 flex flex-col">
+<div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors duration-300">
 
 <Navbar/>
 
@@ -283,7 +283,7 @@ return(
 
 <div className="lg:col-span-4 space-y-8">
 
-<div className="bg-white p-8 rounded-[3rem] shadow-sm border border-slate-100 text-center">
+<div className="bg-white dark:bg-slate-900 p-8 rounded-[3rem] shadow-sm border border-slate-100 dark:border-slate-700 text-center">
 
 <div className="w-24 h-24 bg-blue-600 rounded-[2rem] mx-auto mb-6 flex items-center justify-center text-white text-3xl font-black">
 
@@ -291,18 +291,18 @@ return(
 
 </div>
 
-<h2 className="text-2xl font-black">
+<h2 className="text-2xl font-black text-slate-900 dark:text-white">
 
 {user.name}
 
 </h2>
 
-<p className="text-slate-500 text-sm font-bold uppercase tracking-widest mt-1">
+<p className="text-slate-500 dark:text-slate-300 text-sm font-bold uppercase tracking-widest mt-1">
 
 Candidate
 
 </p>
-<div className="mt-8 pt-8 border-t border-slate-100 space-y-5">
+<div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-700 space-y-5">
 
 <div className="flex justify-between items-center">
 
@@ -343,9 +343,30 @@ Active User
 </div>
 
 
-<div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border border-blue-100 p-8 rounded-[3rem] shadow-sm">
+<button
 
-<h3 className="text-3xl font-black text-slate-900 mb-8">
+onClick={()=>{
+
+localStorage.removeItem("user")
+
+window.location.href="/"
+
+}}
+
+className="w-full mt-6 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-black"
+
+>
+
+Logout
+
+</button>
+
+
+
+
+<div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border border-blue-100 dark:border-slate-700 p-8 rounded-[3rem] shadow-sm">
+
+<h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8">
 
 🎯 AI Journey
 
@@ -353,7 +374,7 @@ Active User
 
 <div className="space-y-5">
 
-<div className="flex justify-between items-center bg-white p-4 rounded-2xl">
+<div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl">
 
 <div>
 
@@ -381,7 +402,7 @@ Interviews
 
 
 
-<div className="flex justify-between items-center bg-white p-4 rounded-2xl">
+<div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl">
 
 <div>
 
@@ -409,7 +430,7 @@ Resumes
 
 
 
-<div className="flex justify-between items-center bg-white p-4 rounded-2xl">
+<div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl">
 
 <div>
 
@@ -437,7 +458,7 @@ Best Score
 
 
 
-<div className="flex justify-between items-center bg-white p-4 rounded-2xl">
+<div className="flex justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl">
 
 <div>
 
@@ -478,7 +499,7 @@ Latest ATS
 
 {/* INTERVIEWS */}
 
-<div className="bg-white p-10 rounded-[3.5rem] shadow-sm border border-slate-100">
+<div className="bg-white dark:bg-slate-900 p-10 rounded-[3.5rem] shadow-sm border border-slate-100 dark:border-slate-700">
 
 <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
 
@@ -603,7 +624,7 @@ className="px-4 py-2 bg-red-500 text-white rounded-xl font-bold"
 
 {/* RESUME */}
 
-<div className="bg-white p-10 rounded-[3.5rem] shadow-sm border border-slate-100">
+<div className="bg-white dark:bg-slate-900 p-10 rounded-[3.5rem] shadow-sm border border-slate-100 dark:border-slate-700">
 
 <h3 className="text-2xl font-black mb-8 flex items-center gap-3">
 
@@ -637,7 +658,7 @@ resumes.length===0 ?
 
 (
 
-<div className="p-10 border-2 border-dashed border-slate-100 rounded-[2.5rem] text-center">
+<div className="p-10 border-2 border-dashed border-slate-100 dark:border-slate-700 rounded-[2.5rem] text-center">
 
 No resume uploaded
 
@@ -653,7 +674,7 @@ resumes.map((item)=>(
 
 key={item.id}
 
-className="border rounded-3xl p-6 flex justify-between items-center"
+className="border border-slate-200 dark:border-slate-700 rounded-3xl p-6 flex justify-between items-center"
 
 >
 

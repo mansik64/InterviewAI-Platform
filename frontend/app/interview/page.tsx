@@ -273,13 +273,13 @@ router.push(
 
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans">
+    <div className="min-h-screen bg-white dark:bg-slate-950 flex flex-col font-sans transition-colors duration-300">
       <Navbar />
       <main className="flex-grow pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h1 className="text-4xl font-black text-slate-900 tracking-tight">Interview Dashboard</h1>
-            <p className="text-slate-500 mt-2 font-medium">Manage your mock sessions and track performance.</p>
+            <h1 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight">Interview Dashboard</h1>
+            <p className="text-slate-500 dark:text-slate-300 mt-2 font-medium">Manage your mock sessions and track performance.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -408,12 +408,12 @@ className="px-6 py-3 bg-red-600 rounded-xl font-black"
               </div>
             </div>
 
-            <div onClick={() => { setShowCalendar(true); setDateError(""); }} className="group cursor-pointer bg-white p-10 rounded-[3.5rem] border-2 border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between min-h-[350px]">
-              <div className="w-16 h-16 bg-slate-50 text-slate-900 rounded-2xl flex items-center justify-center mb-8 border border-slate-100"><Calendar size={32} /></div>
+            <div onClick={() => { setShowCalendar(true); setDateError(""); }} className="group cursor-pointer bg-white dark:bg-slate-900 p-10 rounded-[3.5rem] border-2 border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between min-h-[350px]">
+              <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white rounded-2xl flex items-center justify-center mb-8 border border-slate-100 dark:border-slate-700"><Calendar size={32} /></div>
               <div>
-                <h2 className="text-3xl font-black text-slate-900 leading-tight">Schedule <br/> Future Prep</h2>
-                <p className="text-slate-500 mt-4 text-base">Book a convenient slot for later.</p>
-                <button className="mt-8 border-2 border-slate-200 text-slate-900 px-8 py-3.5 rounded-2xl font-black flex items-center gap-3 transition-all">Open Calendar <ChevronRight size={18} /></button>
+                <h2 className="text-3xl font-black text-slate-900 dark:text-white leading-tight">Schedule <br/> Future Prep</h2>
+                <p className="text-slate-500 dark:text-slate-300 mt-4 text-base">Book a convenient slot for later.</p>
+                <button className="mt-8 border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-3.5 rounded-2xl font-black flex items-center gap-3 transition-all">Open Calendar <ChevronRight size={18} /></button>
               </div>
             </div>
           </div>
@@ -424,16 +424,16 @@ className="px-6 py-3 bg-red-600 rounded-xl font-black"
       {showMockModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setShowMockModal(false)}></div>
-          <div className="relative bg-white w-full max-w-xl rounded-[3rem] p-10 shadow-2xl animate-in zoom-in duration-300">
-            <h3 className="text-3xl font-black text-slate-900 mb-2">Configure Mock Test</h3>
-            <p className="text-slate-500 mb-8">Select your role to generate AI questions.</p>
+          <div className="relative bg-white dark:bg-slate-900 w-full max-w-xl rounded-[3rem] p-10 shadow-2xl animate-in zoom-in duration-300">
+            <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-2">Configure Mock Test</h3>
+            <p className="text-slate-500 dark:text-slate-300 mb-8">Select your role to generate AI questions.</p>
             <div className="space-y-6">
               <label className="block">
                 <span className="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Select Job Role</span>
                 <select
                   value={selectedRole}
                   onChange={(e) => setSelectedRole(e.target.value)}
-                  className="mt-2 w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none font-bold"
+                  className="mt-2 w-full p-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none font-bold"
                 >
                   <option>Frontend Developer</option>
                   <option>Backend Developer</option>
@@ -449,7 +449,7 @@ className="px-6 py-3 bg-red-600 rounded-xl font-black"
                   <input
                     type="text"
                     placeholder="e.g. Cloud Architect"
-                    className="mt-2 w-full p-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
+                    className="mt-2 w-full p-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
                     value={customRole}
                     onChange={(e) => setCustomRole(e.target.value)}
                   />
@@ -473,15 +473,15 @@ className="px-6 py-3 bg-red-600 rounded-xl font-black"
       {showCalendar && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setShowCalendar(false)}></div>
-          <form onSubmit={handleConfirmSchedule} className="relative bg-white w-full max-w-md rounded-[3rem] p-10 shadow-2xl animate-in zoom-in duration-300 text-center">
+          <form onSubmit={handleConfirmSchedule} className="relative bg-white dark:bg-slate-900 w-full max-w-md rounded-[3rem] p-10 shadow-2xl animate-in zoom-in duration-300 text-center">
             <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600"><Calendar size={40} /></div>
-            <h3 className="text-2xl font-black text-slate-900 mb-2">Schedule Session</h3>
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Schedule Session</h3>
             {dateError && (
               <div className="bg-red-50 text-red-600 p-3 rounded-xl text-xs font-bold mb-4 flex items-center gap-2 justify-center">
                 <AlertCircle size={14} /> {dateError}
               </div>
             )}
-            <input required type="datetime-local" value={scheduledTime} onChange={(e) => setScheduledTime(e.target.value)} className="w-full p-4 bg-slate-50 border rounded-2xl mb-8 font-bold outline-none focus:ring-2 focus:ring-blue-600" />
+            <input required type="datetime-local" value={scheduledTime} onChange={(e) => setScheduledTime(e.target.value)} className="w-full p-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl mb-8 font-bold outline-none focus:ring-2 focus:ring-blue-600" />
             <button type="submit" className="w-full bg-slate-900 text-white py-5 rounded-2xl font-black hover:bg-slate-800 transition-colors shadow-lg">Confirm Time</button>
             <button type="button" onClick={() => setShowCalendar(false)} className="mt-4 text-slate-400 font-bold text-sm">Close</button>
           </form>

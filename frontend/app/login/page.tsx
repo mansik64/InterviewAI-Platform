@@ -163,16 +163,16 @@ alert(
 }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col transition-colors duration-300">
       <Navbar />
       <main className="flex-grow flex items-center justify-center px-6 pt-20">
-        <div className="w-full max-w-md bg-white rounded-[3rem] shadow-2xl border border-slate-100 overflow-hidden animate-in fade-in zoom-in duration-500">
+        <div className="w-full max-w-md bg-white dark:bg-slate-900 rounded-[3rem] shadow-2xl border border-slate-100 dark:border-slate-700 overflow-hidden animate-in fade-in zoom-in duration-500">
           
           <div className="bg-slate-900 p-10 text-center text-white">
             <h2 className="text-3xl font-black tracking-tighter">
               {isSignup ? "Create Account" : "Welcome Back"}
             </h2>
-            <p className="text-slate-400 text-sm mt-2">
+            <p className="text-slate-400 dark:text-slate-300 text-sm mt-2">
               {isSignup ? "Join InterviewAI to start preparing" : "Login to manage your sessions"}
             </p>
           </div>
@@ -183,7 +183,7 @@ alert(
                 <User className="absolute left-4 top-4 text-slate-400" size={18} />
                 <input 
                   required type="text" placeholder="Full Name" 
-                  className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
+                  className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
@@ -193,7 +193,7 @@ alert(
               <Mail className="absolute left-4 top-4 text-slate-400" size={18} />
               <input 
                 required type="email" placeholder="Email Address" 
-                className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
+               className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
               />
             </div>
@@ -203,7 +203,7 @@ alert(
                 <Phone className="absolute left-4 top-4 text-slate-400" size={18} />
                 <input 
                   required type="tel" placeholder="Phone Number" 
-                  className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
+                 className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                 />
               </div>
@@ -212,7 +212,7 @@ alert(
             <div className="relative">
               <Lock className="absolute left-4 top-4 text-slate-400" size={18} />
               <input required type="password" placeholder="Password"
-              className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
+              className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-900 dark:text-white rounded-2xl outline-none focus:ring-2 focus:ring-blue-600 font-bold"
               onChange={(e)=>setFormData({...formData,password:e.target.value})}    />
             </div>
 
@@ -220,7 +220,7 @@ alert(
               {isSignup ? "Sign Up" : "Sign In"} <ArrowRight size={20} />
             </button>
 
-            <p className="text-center text-sm font-bold text-slate-500">
+            <p className="text-center text-sm font-bold text-slate-500 dark:text-slate-300">
               {isSignup ? "Already have an account?" : "Don't have an account?"}
               <button 
                 type="button" onClick={() => setIsSignup(!isSignup)}
