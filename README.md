@@ -363,6 +363,32 @@ The platform provides:
 
 ---
 
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+The landing page introduces the platform and allows users to quickly start mock interviews or analyze their resumes.
+
+![Home Page](screenshots/home-page.png)
+
+---
+
+### 🎯 Interview Dashboard
+
+Users can track their interview activities, practice hours, and launch AI-powered mock interview sessions.
+
+![Interview Dashboard](screenshots/interview-dashboard.png)
+
+---
+
+### 👤 Candidate Profile
+
+The profile section displays interview history, resume analysis records, ATS scores, and overall progress.
+
+![Candidate Profile](screenshots/candidate-profile.png)
+
+
 ## Installation
 
 ### Clone Repository
@@ -408,3 +434,4 @@ Aspiring Software Developer
 ## License
 
 This project is developed for educational, portfolio, and demonstration purposes.
+© 2026 InterviewAI. All Rights Reserved.
