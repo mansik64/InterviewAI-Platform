@@ -556,8 +556,9 @@ Platform: Supabase PostgreSQL
 **Mansi Shukla**.☘︎ ݁˖
 
 Aspiring Software Developer
-Email - 24mansishukla614@gmail.com
 
+Email - 24mansishukla614@gmail.com
+.☘︎ ݁˖
 ---
 
 # License
