@@ -468,7 +468,7 @@ NEXT_PUBLIC_API_URL=
 
 ---
 
-# Expected Outcomes
+# Outcomes
 
 The platform provides:
 
@@ -485,16 +485,6 @@ The platform provides:
 
 ---
 
-# Screenshots
-
-Add screenshots of:
-
-* Login Page
-* Dashboard
-* Resume Analyzer
-* Mock Interview Screen
-* AI Feedback Page
-* PDF Report Preview
 
 ---
 
@@ -546,7 +536,7 @@ Platform: Supabase PostgreSQL
 
 ---
 
-# Project Highlights
+# Highlights
 
 * AI-Powered Interview Preparation Platform
 * ATS Resume Analysis Engine
@@ -563,7 +553,7 @@ Platform: Supabase PostgreSQL
 
 # Author
 
-**Mansi Shukla**
+**Mansi Shukla**.☘︎ ݁˖
 
 Aspiring Software Developer
 Email - 24mansishukla614@gmail.com
