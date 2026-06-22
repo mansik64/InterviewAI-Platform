@@ -343,7 +343,6 @@ InterviewAI-Platform/
 │
 ├── app/
 ├── components/
-├── store/
 ├── public/
 │
 ├── backend/
@@ -353,8 +352,6 @@ InterviewAI-Platform/
 ├── middleware/
 ├── routes/
 ├── services/
-├── uploads/
-├── reports/
 │
 └── README.md
 ```
